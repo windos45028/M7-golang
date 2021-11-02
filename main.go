@@ -8,56 +8,8 @@ import (
 	"github.com/streadway/amqp"
 )
 
-// func htmlWelcome(w http.ResponseWriter, r *http.Request, p httprouter.Params) {
-// 	w.Header().Set("Content-Type", "text/html")
-// 	html := `<!doctype  html>
-//     <META  http-equiv="Content-Type"  content="text/html"  charset="utf-8">
-//     <html  lang="zhCN">
-//         <head>
-//             <title>Golang</title>
-//             <meta  name="viewport"  content="width=device-width,  initial-scale=1.0,  maximum-scale=1.0,  user-scalable=0;"  />
-//         </head>
-//         <body>
-//             <div id="app">
-// 				Welcome!
-// 				<a href="/Login">Login</a>
-// 				<br>
-// 				<a href="/Panic">list</a>
-// 				<br>
-// 				<a href="/post">post</a>
-// 			</div>
-//         </body>
-//     </html>`
-// 	fmt.Fprintf(w, html)
-// }
-
-// func Panic(w http.ResponseWriter, r *http.Request, p httprouter.Params) {
-// 	defer func() {
-// 		if err := recover(); err != nil {
-// 			fmt.Println("哈 天真a吉")
-// 		}
-// 	}()
-
-// 	panic("test")
-// }
-
 func main() {
-	// mux := httprouter.New()
-	// mux.GET("/Login", htmlWelcome)
-	// mux.GET("/Panic", Panic)
-
-	// // Set the parameters for a HTTP server
-	// server := http.Server{
-	// 	Addr:    "0.0.0.0:8000",
-	// 	Handler: mux,
-	// }
-
-	// fmt.Println("Http Server :8000")
-
-	// server.ListenAndServe()
-
-	// panic("test")
-
+	// test
 	conn, err := amqp.Dial("amqp://root:abcd1234!@localhost:5672/")
 	if err != nil {
 		fmt.Printf("%s: %s\n", "Failed to connect to RabbitMQ", err)
